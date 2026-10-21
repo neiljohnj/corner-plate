@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace CornerPlate.Views
+namespace CornerPlate.Desktop.Views
 {
     public partial class PosView : UserControl
     {

@@ -1,10 +1,10 @@
-﻿using Avalonia;
+using Avalonia;
 using System;
 using Optris.Icons.Avalonia;
 using Optris.Icons.Avalonia.FontAwesome;
 using Optris.Icons.Avalonia.MaterialDesign;
 
-namespace CornerPlate;
+namespace CornerPlate.Desktop;
 
 sealed class Program
 {

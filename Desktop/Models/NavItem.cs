@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace CornerPlate.Models;
+namespace CornerPlate.Desktop.Models;
 
 public class NavItem
 {

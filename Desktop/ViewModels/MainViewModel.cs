@@ -1,8 +1,8 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using System.Collections.ObjectModel;
-using CornerPlate.Models;
+using CornerPlate.Desktop.Models;
 
-namespace CornerPlate.ViewModels;
+namespace CornerPlate.Desktop.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {

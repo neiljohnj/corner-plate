@@ -1,6 +1,6 @@
-﻿using Avalonia.Controls;
+using Avalonia.Controls;
 
-namespace CornerPlate.Views;
+namespace CornerPlate.Desktop.Views;
 
 public partial class MainWindow : Window
 {

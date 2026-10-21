@@ -1,10 +1,10 @@
-﻿using Avalonia.Media.Imaging;
+using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CornerPlate.Models.PosView;
+namespace CornerPlate.Desktop.Models.PosView;
 
 public class MenuItem
 {

@@ -1,10 +1,10 @@
-﻿using Avalonia;
+using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using CornerPlate.ViewModels;
-using CornerPlate.Views;
+using CornerPlate.Desktop.ViewModels;
+using CornerPlate.Desktop.Views;
 
-namespace CornerPlate;
+namespace CornerPlate.Desktop;
 
 public partial class App : Application
 {

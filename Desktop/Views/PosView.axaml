@@ -2,12 +2,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:posview="using:CornerPlate.Models.PosView"
-             xmlns:vm="using:CornerPlate.ViewModels"
+             xmlns:posview="using:CornerPlate.Desktop.Models.PosView"
+             xmlns:vm="using:CornerPlate.Desktop.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:i="https://github.com/projektanker/icons.avalonia"
              x:DataType="vm:PosViewModel"
-             x:Class="CornerPlate.Views.PosView">
+             x:Class="CornerPlate.Desktop.Views.PosView">
 
     <Design.DataContext>
         <vm:PosViewModel/>

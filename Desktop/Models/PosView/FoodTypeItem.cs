@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace CornerPlate.Models.PosView;
+namespace CornerPlate.Desktop.Models.PosView;
 
 public class FoodTypeItem
 {

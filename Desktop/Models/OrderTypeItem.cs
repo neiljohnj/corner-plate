@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CornerPlate.Models;
+namespace CornerPlate.Desktop.Models;
 
 public class OrderTypeItem
 {

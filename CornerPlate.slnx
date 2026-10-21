@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="Desktop/Desktop.csproj" />
-  <Project Path="Domain/Domain.csproj" />
-  <Project Path="Infrastructure/Infrastructure.csproj" Id="d0412a5c-a51c-49d4-ad96-9903e64b8ef4" />
+  <Project Path="Desktop/CornerPlate.Desktop.csproj" />
+  <Project Path="Domain/CornerPlate.Domain.csproj" />
+  <Project Path="Infrastructure/CornerPlate.Infrastructure.csproj" Id="d0412a5c-a51c-49d4-ad96-9903e64b8ef4" />
 </Solution>
