@@ -1,0 +1,209 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:posview="using:CornerPlate.Models.PosView"
+             xmlns:vm="using:CornerPlate.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:i="https://github.com/projektanker/icons.avalonia"
+             x:DataType="vm:PosViewModel"
+             x:Class="CornerPlate.Views.PosView">
+
+    <Design.DataContext>
+        <vm:PosViewModel/>
+    </Design.DataContext>
+
+    <UserControl.Styles>
+        <Style Selector="ListBox.nav-food > ListBoxItem">
+            <Setter Property="CornerRadius" Value="8,0,0,8" />
+            <Setter Property="BorderThickness" Value="3,0,0,0" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Margin" Value="0,2" />
+        </Style>
+
+        <Style Selector="ListBox.nav-food > ListBoxItem:selected /template/ ContentPresenter">
+            <Setter Property="Background" Value="#FDE8DC" />
+            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryColor}" />
+        </Style>
+
+        <Style Selector="TextBox.search">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderBrush" Value="#E5E7EB" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Padding" Value="8,12" />
+            <Setter Property="MinHeight" Value="44" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+
+        <Style Selector="TextBox.search /template/ Border#PART_BorderElement">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderBrush" Value="#E5E7EB" />
+        </Style>
+        <Style Selector="TextBox.search:focus /template/ Border#PART_BorderElement">
+            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColor}" />
+        </Style>
+
+        <Style Selector="Button.add-item">
+            <Setter Property="Background" Value="{DynamicResource PrimaryColor}" />
+        </Style>
+
+        <Style Selector="Button.add-item:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PrimaryHoverColor}" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+
+        <Style Selector="Button.customize">
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}" />
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryColor}" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+        </Style>
+
+        <Style Selector="Button.customize:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PrimaryHoverColor}" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+    </UserControl.Styles>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="380" />
+        </Grid.ColumnDefinitions>
+
+        <ListBox Classes="nav-food" 
+                 HorizontalAlignment="Left"
+                 ItemsSource="{Binding FoodTypeItems}"
+                 Padding="15, 12"
+                 SelectedIndex="0"
+                    >
+            <ListBox.ItemTemplate>
+                <DataTemplate x:DataType="posview:FoodTypeItem">
+                    <StackPanel Orientation="Horizontal" Spacing="18">
+                        <i:Icon Value="{Binding Icon}" FontSize="" />
+                        <TextBlock
+                            Text="{Binding Text}"
+                            FontSize="12"
+                            VerticalAlignment="Center"
+                            />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- Second Column -->
+        <Border Grid.Column="1" Padding="15,12,0,0">
+            <Grid RowSpacing="12">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Vertical">
+
+                    <TextBlock 
+                        Text="New order"
+                        FontSize="32"
+                        FontWeight="SemiBold"
+                        />
+
+                    <TextBlock
+                        Text="Choose items to get started"
+                        Foreground="Gray"
+                        />
+                </StackPanel>
+
+                <TextBox Grid.Row="1"
+                         Classes="search"
+                         PlaceholderText="Search Menu"
+                         Text="{Binding SearchText}"
+                 >
+                    <TextBox.InnerLeftContent>
+                        <i:Icon Value="fa-solid fa-magnifying-glass" 
+                                FontSize="14"
+                                Margin="12,0,0,0"
+                                Foreground="#6B7280"/>
+                    </TextBox.InnerLeftContent>
+                    <TextBox.InnerRightContent>
+                        <Border Background="#F3F4F6" CornerRadius="4"
+                                Padding="8,0" Margin="0,5,12,5">
+                            <TextBlock 
+                                Text="F2"
+                                FontSize="11"
+                                Foreground="#6B7280"
+                                VerticalAlignment="Center"
+                                Margin="0,6"
+                            />
+                        </Border>
+                    </TextBox.InnerRightContent>
+                </TextBox>
+
+                <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+                    <ItemsControl ItemsSource="{Binding MenuItems}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate x:DataType="posview:MenuItem">
+                                <Border Width="200"
+                                        Margin="0,0,16,16"
+                                        Padding="0,0,0,16"
+                                        Background="White"
+                                        CornerRadius="8"
+                                        ClipToBounds="True"
+                                        >
+                                    <StackPanel Spacing="4">
+                                        <Image Source="{Binding Image}" 
+                                               Height="130"
+                                               Stretch="Uniform"
+                                               
+                                               />
+                                        <StackPanel Margin="12,4,12,12" Spacing="4">
+                                            <TextBlock
+                                                Text="{Binding Name}"
+                                                FontSize="16"
+                                                FontWeight="SemiBold"
+                                                />
+                                            <TextBlock 
+                                                Text="{Binding Price, StringFormat=₱{0:N2}}"
+                                                FontSize="18"
+                                                FontWeight="Bold"
+                                                />
+                                        </StackPanel>
+                                        
+                                        <Button 
+                                            HorizontalAlignment="Right"
+                                            Classes="add-item"
+                                            Margin="0,0,12,0"
+                                            IsVisible="{Binding !IsCustomizable}"
+                                        >
+                                            <i:Icon Value="fa-solid fa-plus"
+                                                    FontSize="16"
+                                                    Foreground="White"
+                                            />
+                                        </Button>
+
+                                        <Button
+                                            Classes="customize"
+                                            Content="Customize"
+                                            IsVisible="{Binding IsCustomizable}"
+                                            />
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
