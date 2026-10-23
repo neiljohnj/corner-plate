@@ -21,6 +21,10 @@
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.13">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Optris.Icons.Avalonia" Version="12.0.7" />
     <PackageReference Include="Optris.Icons.Avalonia.FontAwesome" Version="12.0.7" />
     <PackageReference Include="Optris.Icons.Avalonia.MaterialDesign" Version="12.0.7" />
@@ -30,5 +34,9 @@
     <Compile Update="Views\PosView.axaml.cs">
       <DependentUpon>PosView.axaml</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\CornerPlate.Infrastructure.csproj" />
   </ItemGroup>
 </Project>
