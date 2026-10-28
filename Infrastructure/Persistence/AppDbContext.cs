@@ -1,9 +1,10 @@
-﻿using CornerPlate.Domain.Entities;
+﻿using CornerPlate.Application.Abstractions.Persistence;
+using CornerPlate.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace CornerPlate.Infrastructure.Persistence;
 
-public class AppDbContext : DbContext
+public class AppDbContext : DbContext, IUnitOfWork
 {
     // DbSets here
     public DbSet<MenuCategory> MenuCategories => Set<MenuCategory>();

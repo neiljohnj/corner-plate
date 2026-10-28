@@ -2,7 +2,7 @@
 using CornerPlate.Application.Menus.DTOs;
 using CornerPlate.Domain.Entities;
 
-namespace Application.Menus.Services;
+namespace CornerPlate.Application.Menus.Services;
 
 public sealed class MenuCategoryService
 {
@@ -39,6 +39,22 @@ public sealed class MenuCategoryService
         return category.Id;
     }
 
+    public async Task<bool> RenameAsync(
+        Guid id,
+        string name,
+        CancellationToken ct = default)
+    {
+        var category = await _categories.GetByIdAsync(id, ct);
+
+        if (category is null)
+            return false;
+
+        category.Rename(name);
+        await _unitOfWork.SaveChangesAsync(ct);
+
+        return true;
+    }
+
     public async Task<IReadOnlyList<MenuCategoryDTO>> GetAllAsync(
         CancellationToken ct = default)
     {
@@ -50,5 +66,28 @@ public sealed class MenuCategoryService
                 c.Name,
                 c.SortOrder,
                 c.IsActive))];
+    }
+
+    public async Task<IReadOnlyList<MenuCategoryWithProductsDTO>> GetAllWithProductsAsync(
+        CancellationToken ct = default)
+    {
+        var categoriesWithProducts = await _categories.GetAllWithProductsAsync(ct);
+
+        return [.. categoriesWithProducts
+            .Select(c => new MenuCategoryWithProductsDTO(
+                c.Id,
+                c.Name,
+                c.SortOrder,
+                c.IsActive,
+                [.. c.Products.Select(p => new MenuCategoryProductDTO(
+                    p.Id,
+                    p.Name,
+                    p.Description,
+                    p.CurrentPrice,
+                    p.ProductType,
+                    p.IsAvailable,
+                    p.IsActive
+                ))]
+        ))];
     }
 }

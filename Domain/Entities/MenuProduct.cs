@@ -44,30 +44,35 @@ public class MenuProduct
         decimal currentPrice,
         string taxCode)
     {
-        if (categoryId == Guid.Empty)
-            throw new ArgumentException(
-                "Category ID is required.",
-                nameof(categoryId));
-
-        if (!Enum.IsDefined(productType))
-            throw new ArgumentOutOfRangeException(
-                nameof(productType),
-                "Invalid product type.");
-
         Id = Guid.NewGuid();
-        CategoryId = categoryId;
-        ProductType = productType;
+        ChangeCategory(categoryId);
 
         IsAvailable = true;
         IsActive = true;
 
         Rename(name);
         ChangeDescription(description);
+        ChangeProductType(productType);
         ChangeCurrentPrice(currentPrice);
         ChangeTaxCode(taxCode);
 
         CreatedAt = DateTime.UtcNow;
         UpdatedAt = CreatedAt;
+    }
+
+    public void ChangeCategory(Guid categoryId)
+    {
+        if (categoryId == Guid.Empty)
+            throw new ArgumentException(
+                "Category ID is required.",
+                nameof(categoryId));
+
+        if (categoryId == CategoryId)
+            throw new ArgumentException(
+                "New category is the same current category.",
+                nameof(categoryId));
+
+        CategoryId = categoryId;
     }
 
     public void Rename(string newName)
@@ -114,7 +119,6 @@ public class MenuProduct
 
     public void ChangeTaxCode(string taxCode)
     {
-
         TaxCode = Guard.RequiredText(taxCode, 32, nameof(taxCode));
         Touch();
     }

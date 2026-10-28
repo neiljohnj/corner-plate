@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Application\CornerPlate.Application.csproj" />
     <ProjectReference Include="..\Domain\CornerPlate.Domain.csproj" />
   </ItemGroup>
 

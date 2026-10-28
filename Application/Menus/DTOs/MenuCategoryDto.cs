@@ -5,3 +5,11 @@ public sealed record MenuCategoryDTO(
     string Name,
     int SortOrder,
     bool IsActive);
+
+public sealed record MenuCategoryWithProductsDTO(
+    Guid Id,
+    string Name,
+    int SortOrder,
+    bool IsActive,
+    IReadOnlyCollection<MenuCategoryProductDTO> Products
+    );

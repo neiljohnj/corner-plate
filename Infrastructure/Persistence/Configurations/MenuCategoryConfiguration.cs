@@ -40,6 +40,8 @@ public class MenuCategoryConfiguration : IEntityTypeConfiguration<MenuCategory>
         // Indexes
 
         builder.HasIndex(mc => mc.Name)
-            .IsUnique();
+            .IsUnique()
+            .HasDatabaseName("ux_menu_categories_name_lower")
+            .HasAnnotation("Npgsql:IndexExpression", "lower(name)");
     }
 }
