@@ -1,0 +1,107 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style Selector="TextBlock.view-title">
+        <Setter Property="FontSize" Value="28" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryFontColor}" />
+    </Style>
+
+    <Style Selector="TextBlock.view-subtitle">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Foreground" Value="Gray" />
+    </Style>
+
+    <Style Selector="Button.action-button">
+        <Setter Property="Background" Value="{DynamicResource PrimaryColor}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Padding" Value="20,12" />
+    </Style>
+
+    <Style Selector="Button.action-button:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource PrimaryHoverBrush}" />
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+
+    <Style Selector="Button.action-button.outline">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}" />
+        <Setter Property="BorderThickness" Value="1.25" />
+    </Style>
+
+    <Style Selector="Button.action-button.outline:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource PrimarySoftBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}" />
+    </Style>
+
+    <Style Selector="Button.action-button.outline:pressed /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource PrimaryHoverBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHoverBrush}" />
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+
+    <!-- Secondary Button -->
+
+    <Style Selector="Button.action-button.secondary">
+        <Setter Property="Background" Value="{DynamicResource SecondaryBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SecondaryBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryFontColor}" />
+    </Style>
+
+    <Style Selector="Button.action-button.secondary.outline">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryFontColor}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SecondaryBrush}" />
+    </Style>
+
+    <Style Selector="Button.action-button.secondary.outline:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource SecondarySoftBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryFontColor}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SecondaryBrush}" />
+    </Style>
+
+    <Style Selector="Button.action-button.secondary.outline:pressed /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource SecondaryHoverBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource White}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SecondaryHoverBrush}" />
+    </Style>
+
+    <Style Selector="Button > StackPanel.action-button-content">
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="Spacing" Value="8" />
+    </Style>
+
+    <Style Selector="Button.full">
+        <Setter Property="Margin" Value="12,0" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+    </Style>
+
+    <!-- Search Box -->
+
+    <Style Selector="TextBox.search">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="BorderBrush" Value="#E5E7EB" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Padding" Value="8,12" />
+        <Setter Property="MinHeight" Value="44" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+
+    <Style Selector="TextBox.search /template/ Border#PART_BorderElement">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="BorderBrush" Value="#E5E7EB" />
+    </Style>
+    <Style Selector="TextBox.search:focus /template/ Border#PART_BorderElement">
+        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColor}" />
+    </Style>
+
+</Styles>

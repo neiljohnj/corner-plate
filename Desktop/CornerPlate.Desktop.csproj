@@ -31,6 +31,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\MenuCatalogView.axaml.cs">
+      <DependentUpon>MenuCatalogView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\PosView.axaml.cs">
       <DependentUpon>PosView.axaml</DependentUpon>
     </Compile>

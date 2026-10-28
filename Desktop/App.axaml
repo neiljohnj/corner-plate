@@ -14,12 +14,26 @@
         <Color x:Key="PrimaryHoverColor">#CA5518</Color>
         <Color x:Key="PrimarySoftColor">#FDE8DC</Color>
 
+        <Color x:Key="SecondaryColor">#9FA8b8</Color>
+        <Color x:Key="SecondaryHoverColor">#DCE3ff</Color>
+        <Color x:Key="SecondarySoftColor">#F2F5FD</Color>
+
+        <Color x:Key="PrimaryFontColor">#1E293B</Color>
+
         <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}" />
         <SolidColorBrush x:Key="PrimaryHoverBrush" Color="{StaticResource PrimaryHoverColor}" />
         <SolidColorBrush x:Key="PrimarySoftBrush" Color="{StaticResource PrimarySoftColor}" />
+
+        <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}" />
+        <SolidColorBrush x:Key="SecondaryHoverBrush" Color="{StaticResource SecondaryHoverColor}" />
+        <SolidColorBrush x:Key="SecondarySoftBrush" Color="{StaticResource SecondarySoftColor}" />
+
+        <SolidColorBrush x:Key="FontBrush" Color="{StaticResource PrimaryFontColor}" />
     </Application.Resources>
 
     <Application.Styles>
         <FluentTheme />
+
+        <StyleInclude Source="avares://CornerPlate.Desktop/Styles/Globals.axaml" />
     </Application.Styles>
 </Application>

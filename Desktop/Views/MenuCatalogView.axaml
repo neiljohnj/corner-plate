@@ -1,0 +1,101 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:CornerPlate.Desktop.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType ="vm:MenuCatalogViewModel"
+             x:Class="CornerPlate.Desktop.Views.MenuCatalogView"
+             xmlns:i="https://github.com/projektanker/icons.avalonia"
+             xmlns:controls="using:CornerPlate.Desktop.Controls"
+             >
+  
+    <Design.DataContext>
+        <vm:MenuCatalogViewModel />
+    </Design.DataContext>
+
+    <UserControl.Styles>
+    </UserControl.Styles>
+
+    <Grid RowSpacing="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel
+                Spacing="2"
+                >
+                <TextBlock
+                    Text="Menu Catalog"
+                    Classes="view-title"
+                />
+                <TextBlock
+                    Text="Manage products, bundles, and selling availability."
+                    Classes="view-subtitle"
+                    />
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Spacing="16" Orientation="Horizontal">
+                <Button Classes="action-button secondary outline"
+                        >
+                    <StackPanel Classes="action-button-content">
+                        <i:Icon Value="fa-solid fa-folder-plus" />
+                        <TextBlock Text="Add Category" />
+                    </StackPanel>
+                </Button>
+
+                <Button Classes="action-button outline"
+                        >
+                    <StackPanel Classes="action-button-content">
+                        <i:Icon Value="fa-solid fa-box-archive" />
+                        <TextBlock Text="Create Bundle" />
+                    </StackPanel>
+                </Button>
+
+                <Button Classes="action-button"
+                        >
+                    <StackPanel Classes="action-button-content">
+                        <i:Icon Value="fa-solid fa-plus" />
+                        <TextBlock Text="New Product" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <Grid ColumnSpacing="12" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <controls:SearchBox
+                Placeholder="Search products"
+                Text="{Binding ProductSearchText}"
+                />
+
+            <ComboBox Grid.Column="1" SelectedIndex="0" HorizontalAlignment="Stretch">
+                <ComboBoxItem Content="All Products" />
+                <ComboBoxItem Content="Burgers" />
+                <ComboBoxItem Content="Fries" />
+            </ComboBox>
+
+            <ComboBox Grid.Column="2" SelectedIndex="0" HorizontalAlignment="Stretch">
+                <ComboBoxItem Content="All Types" />
+                <ComboBoxItem Content="Single" />
+                <ComboBoxItem Content="Bundle" />
+            </ComboBox>
+        </Grid>
+    </Grid>
+
+</UserControl>

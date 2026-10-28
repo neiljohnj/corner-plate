@@ -61,7 +61,10 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         
-        <ListBox Classes="sidebar selectable" SelectedIndex="0" ItemsSource="{Binding NavItems}">
+        <ListBox Classes="sidebar selectable"
+                 ItemsSource="{Binding NavItems}"
+                 SelectedItem="{Binding SelectedNavItem, Mode=TwoWay}"
+                 >
             <ListBox.ItemTemplate>
                 <DataTemplate x:DataType="models:NavItem">
                     <StackPanel Orientation="Vertical" Spacing="12">
@@ -149,7 +152,9 @@
                 </Grid>
             </Border>
 
-            <ContentControl Grid.Row="1" Content="{Binding CurrentPage}" Background="WhiteSmoke" />
+            <Border Grid.Row="1" Padding="24" Background="WhiteSmoke">
+                <ContentControl Content="{Binding Navigation.CurrentPage}" />
+            </Border>
         </Grid>
     </Grid>
 </Window>

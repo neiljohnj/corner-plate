@@ -1,0 +1,39 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="CornerPlate.Desktop.Controls.SearchBox"
+             xmlns:i="https://github.com/projektanker/icons.avalonia"
+             x:Name="Root"
+             >
+
+    <TextBox Grid.Row="1"
+             Classes="search"
+             PlaceholderText="{Binding #Root.Placeholder}"
+             Text="{Binding #Root.Text, Mode=TwoWay}"
+        >
+
+        <TextBox.InnerLeftContent>
+            <i:Icon Value="fa-solid fa-magnifying-glass" 
+                    FontSize="14"
+                    Margin="12,0,0,0"
+                    Foreground="#6B7280"/>
+        </TextBox.InnerLeftContent>
+
+        <TextBox.InnerRightContent>
+            <Border Background="#F3F4F6" CornerRadius="4"
+                    Padding="8,0" Margin="0,5,12,5">
+                <TextBlock 
+                    Text="F2"
+                    FontSize="11"
+                    Foreground="#6B7280"
+                    VerticalAlignment="Center"
+                    Margin="0,6"
+                />
+            </Border>
+        </TextBox.InnerRightContent>
+
+    </TextBox>
+
+</UserControl>
