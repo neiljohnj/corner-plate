@@ -87,7 +87,7 @@
                 />
 
             <ComboBox Grid.Column="1" 
-                      Classes="combo-box"
+                      Classes="form-control combo-box"
                       SelectedIndex="0" 
                       HorizontalAlignment="Stretch">
                 <ComboBoxItem Content="All Products" />
@@ -95,7 +95,10 @@
                 <ComboBoxItem Content="Fries" />
             </ComboBox>
 
-            <ComboBox Grid.Column="2" SelectedIndex="0" HorizontalAlignment="Stretch">
+            <ComboBox Grid.Column="2" 
+                      Classes="form-control combo-box"
+                      SelectedIndex="0" 
+                      HorizontalAlignment="Stretch">
                 <ComboBoxItem Content="All Types" />
                 <ComboBoxItem Content="Single" />
                 <ComboBoxItem Content="Bundle" />

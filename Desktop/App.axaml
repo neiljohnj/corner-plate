@@ -20,6 +20,9 @@
 
         <Color x:Key="PrimaryFontColor">#1E293B</Color>
 
+        <!-- Input Form Brush Colors -->
+        <Color x:Key="FormBorderColor">#E5E7EB</Color>
+
         <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}" />
         <SolidColorBrush x:Key="PrimaryHoverBrush" Color="{StaticResource PrimaryHoverColor}" />
         <SolidColorBrush x:Key="PrimarySoftBrush" Color="{StaticResource PrimarySoftColor}" />
@@ -29,6 +32,7 @@
         <SolidColorBrush x:Key="SecondarySoftBrush" Color="{StaticResource SecondarySoftColor}" />
 
         <SolidColorBrush x:Key="FontBrush" Color="{StaticResource PrimaryFontColor}" />
+        <SolidColorBrush x:Key="FormBorderBrush" Color="{StaticResource FormBorderColor}" />
     </Application.Resources>
 
     <Application.Styles>
@@ -36,6 +40,6 @@
 
         <!-- Some Globals -->
         <StyleInclude Source="avares://CornerPlate.Desktop/Styles/Globals.axaml" />
-        <StyleInclude Source="avares://CornerPlat.Desktop/Styles/Components/Inputs.axaml" />
+        <StyleInclude Source="avares://CornerPlate.Desktop/Styles/Components/Inputs.axaml" />
     </Application.Styles>
 </Application>

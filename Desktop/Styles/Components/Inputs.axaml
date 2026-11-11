@@ -1,11 +1,13 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Design.PreviewWith>
-        <Border Padding="20" Width="400">
+        <Border Padding="20" 
+                Width="400"
+                >
             <StackPanel Spacing="20">
                 <StackPanel Spacing="10">
                     <!-- Preview your custom styled ComboBox -->
-                    <ComboBox Classes="combo-box" SelectedIndex="0" HorizontalAlignment="Stretch">
+                    <ComboBox Classes="form-control combo-box" SelectedIndex="0" HorizontalAlignment="Stretch">
                         <ComboBoxItem>Option 1</ComboBoxItem>
                         <ComboBoxItem>Option 2</ComboBoxItem>
                         <ComboBoxItem>Option 3</ComboBoxItem>
@@ -27,14 +29,18 @@
 
     <!-- Search Box -->
 
-    <Style Selector="TextBox.search">
+    <Style Selector=":is(TemplatedControl).form-control">
         <Setter Property="Background" Value="White" />
-        <Setter Property="BorderBrush" Value="#E5E7EB" />
+        <Setter Property="BorderBrush" Value="{DynamicResource FormBorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="CornerRadius" Value="8" />
-        <Setter Property="Padding" Value="8,12" />
+        <Setter Property="Padding" Value="8, 12" />
         <Setter Property="MinHeight" Value="44" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="CornerRadius" Value="8" />
+    </Style>
+
+    <Style Selector="TextBox.search">
+        <!-- Set as empty for now -->
     </Style>
 
     <Style Selector="TextBox.search /template/ Border#PART_BorderElement">
@@ -47,7 +53,7 @@
 
         
     <Style Selector="ComboBox.combo-box">
-        
+        <!-- Set as empty for now -->
     </Style>
 
 </Styles>

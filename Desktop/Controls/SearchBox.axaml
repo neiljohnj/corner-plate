@@ -9,7 +9,7 @@
              >
 
     <TextBox Grid.Row="1"
-             Classes="search"
+             Classes="form-control search"
              PlaceholderText="{Binding #Root.Placeholder}"
              Text="{Binding #Root.Text, Mode=TwoWay}"
         >
