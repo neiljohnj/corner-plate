@@ -1,0 +1,53 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20" Width="400">
+            <StackPanel Spacing="20">
+                <StackPanel Spacing="10">
+                    <!-- Preview your custom styled ComboBox -->
+                    <ComboBox Classes="combo-box" SelectedIndex="0" HorizontalAlignment="Stretch">
+                        <ComboBoxItem>Option 1</ComboBoxItem>
+                        <ComboBoxItem>Option 2</ComboBoxItem>
+                        <ComboBoxItem>Option 3</ComboBoxItem>
+                    </ComboBox>
+
+                    <!-- Optional: Add an unstyled ComboBox to compare -->
+                    <ComboBox SelectedIndex="0" HorizontalAlignment="Stretch">
+                        <ComboBoxItem>Default ComboBox</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Spacing="15">
+                    <TextBox>Regular Text Box</TextBox>
+                    <TextBox Classes="search">Search Text Box</TextBox>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+
+    <!-- Search Box -->
+
+    <Style Selector="TextBox.search">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="BorderBrush" Value="#E5E7EB" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Padding" Value="8,12" />
+        <Setter Property="MinHeight" Value="44" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+
+    <Style Selector="TextBox.search /template/ Border#PART_BorderElement">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="BorderBrush" Value="#E5E7EB" />
+    </Style>
+    <Style Selector="TextBox.search:focus /template/ Border#PART_BorderElement">
+        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColor}" />
+    </Style>
+
+        
+    <Style Selector="ComboBox.combo-box">
+        
+    </Style>
+
+</Styles>

@@ -3,7 +3,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:CornerPlate.Desktop.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" 
+             d:DesignWidth="1920" 
+             d:DesignHeight="1080"
              x:DataType ="vm:MenuCatalogViewModel"
              x:Class="CornerPlate.Desktop.Views.MenuCatalogView"
              xmlns:i="https://github.com/projektanker/icons.avalonia"
@@ -12,7 +14,7 @@
   
     <Design.DataContext>
         <vm:MenuCatalogViewModel />
-    </Design.DataContext>
+    </Design.DataContext> 
 
     <UserControl.Styles>
     </UserControl.Styles>
@@ -84,7 +86,10 @@
                 Text="{Binding ProductSearchText}"
                 />
 
-            <ComboBox Grid.Column="1" SelectedIndex="0" HorizontalAlignment="Stretch">
+            <ComboBox Grid.Column="1" 
+                      Classes="combo-box"
+                      SelectedIndex="0" 
+                      HorizontalAlignment="Stretch">
                 <ComboBoxItem Content="All Products" />
                 <ComboBoxItem Content="Burgers" />
                 <ComboBoxItem Content="Fries" />

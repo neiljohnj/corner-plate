@@ -1,6 +1,28 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <StackPanel Spacing="15">
+                <StackPanel Spacing="6">
+                    <TextBlock Classes="view-title">Your View Title</TextBlock>
+                    <TextBlock>Regular Text Block</TextBlock>
+                </StackPanel>
+
+                <StackPanel Spacing="5">
+                    <Button>Regular Button</Button>
+                    <Button Classes="action-button">Action Button</Button>
+                    <Button Classes="action-button outline">Outlined Action Button</Button>
+                </StackPanel>
+
+                <StackPanel Spacing ="5">
+                    <Button Classes="action-button secondary">Secondary Action Button</Button>
+                    <Button Classes="action-button secondary outline">Outlined Secondary Button</Button>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Design.PreviewWith>
+
     <Style Selector="TextBlock.view-title">
         <Setter Property="FontSize" Value="28" />
         <Setter Property="FontWeight" Value="Bold" />
@@ -56,6 +78,11 @@
         <Setter Property="Foreground" Value="{DynamicResource PrimaryFontColor}" />
     </Style>
 
+    <Style Selector="Button.action-button.secondary:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource SecondaryHoverBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryFontColor}" />
+    </Style>
+
     <Style Selector="Button.action-button.secondary.outline">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{DynamicResource PrimaryFontColor}" />
@@ -83,25 +110,4 @@
         <Setter Property="Margin" Value="12,0" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
     </Style>
-
-    <!-- Search Box -->
-
-    <Style Selector="TextBox.search">
-        <Setter Property="Background" Value="White" />
-        <Setter Property="BorderBrush" Value="#E5E7EB" />
-        <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="CornerRadius" Value="8" />
-        <Setter Property="Padding" Value="8,12" />
-        <Setter Property="MinHeight" Value="44" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
-    </Style>
-
-    <Style Selector="TextBox.search /template/ Border#PART_BorderElement">
-        <Setter Property="Background" Value="White" />
-        <Setter Property="BorderBrush" Value="#E5E7EB" />
-    </Style>
-    <Style Selector="TextBox.search:focus /template/ Border#PART_BorderElement">
-        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColor}" />
-    </Style>
-
 </Styles>

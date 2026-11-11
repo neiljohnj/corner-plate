@@ -34,6 +34,8 @@
     <Application.Styles>
         <FluentTheme />
 
+        <!-- Some Globals -->
         <StyleInclude Source="avares://CornerPlate.Desktop/Styles/Globals.axaml" />
+        <StyleInclude Source="avares://CornerPlat.Desktop/Styles/Components/Inputs.axaml" />
     </Application.Styles>
 </Application>
