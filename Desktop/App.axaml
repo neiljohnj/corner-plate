@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="CornerPlate.Desktop.App"
              xmlns:local="using:CornerPlate.Desktop"
+             xmlns:helpers="using:CornerPlate.Desktop.Helpers"
              RequestedThemeVariant="Default">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
@@ -10,6 +11,9 @@
     </Application.DataTemplates>
 
     <Application.Resources>
+
+        <!-- Color Resources -->
+
         <Color x:Key="PrimaryColor">#BC4E18</Color>
         <Color x:Key="PrimaryHoverColor">#CA5518</Color>
         <Color x:Key="PrimarySoftColor">#FDE8DC</Color>
@@ -33,6 +37,16 @@
 
         <SolidColorBrush x:Key="FontBrush" Color="{StaticResource PrimaryFontColor}" />
         <SolidColorBrush x:Key="FormBorderBrush" Color="{StaticResource FormBorderColor}" />
+
+        <!-- End of Color Resources -->
+
+        <!-- Helpers -->
+
+        <helpers:DecimalToCurrencyConverter 
+            x:Key="CurrencyConverter" />
+
+        <!-- End of Helpers -->
+
     </Application.Resources>
 
     <Application.Styles>

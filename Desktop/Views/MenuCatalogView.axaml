@@ -153,6 +153,36 @@
             </ComboBox>
         </Grid>
 
+        <!-- Grid.Row=4 for Products Table -->
+        <TableView Grid.Row="4"
+                   ItemsSource="{Binding Products}"
+                   >
+            <TableView.Columns>
+                <TableViewColumn Header="Product Name"
+                                 Width="3*"
+                                 Binding="{Binding Name}"
+                                 />
+                
+                <TableViewColumn Header="Category"
+                                 Width="*"
+                                 Binding="{Binding Category}"
+                                 />
+                
+                <TableViewColumn Header="Type"
+                                 Width="2*"
+                                 Binding="{Binding Type}"
+                                 />
+
+                <TableViewColumn Header="Selling Price"
+                                 Width="2*"
+                                 Binding="{Binding Price, 
+                                    Converter={StaticResource CurrencyConverter}}"
+                                 />
+
+                <TableViewColumn Header="Availability" />
+            </TableView.Columns>
+        </TableView>
+
     </Grid>
 
 </UserControl>

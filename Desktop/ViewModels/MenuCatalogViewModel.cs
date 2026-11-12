@@ -9,7 +9,7 @@ public partial class MenuCatalogViewModel : ViewModelBase
     [ObservableProperty]
     private string? _productSearchText;
 
-    private ObservableCollection<Product> Products { get; } = new()
+    public ObservableCollection<Product> Products { get; } = new()
     {
         new Product { Name = "Burger Combo", Category = "Combos", Type = "Bundle", Price = 224.00m },
         new Product { Name = "Chicken Burger", Category = "Burgers", Type = "Individual", Price = 196.00m },
