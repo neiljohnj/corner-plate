@@ -19,6 +19,12 @@
                     </ComboBox>
                 </StackPanel>
 
+                <StackPanel Spacing="10">
+                    <ComboBox Classes="form-control combo-box no-outline" SelectedIndex="0">
+                        <ComboBoxItem>Name: A-Z</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+
                 <StackPanel Spacing="15">
                     <TextBox>Regular Text Box</TextBox>
                     <TextBox Classes="search">Search Text Box</TextBox>
@@ -47,13 +53,25 @@
         <Setter Property="Background" Value="White" />
         <Setter Property="BorderBrush" Value="#E5E7EB" />
     </Style>
+
     <Style Selector="TextBox.search:focus /template/ Border#PART_BorderElement">
         <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColor}" />
     </Style>
 
         
     <Style Selector="ComboBox.combo-box">
-        <!-- Set as empty for now -->
+        <Setter Property="Padding" Value="15, 12" />
+    </Style>
+
+    <!-- Combo Box's Chevron -->
+    <Style Selector="ComboBox.combo-box /template/ PathIcon#DropDownGlyph">
+        <!-- LTRB -->
+        <Setter Property="Margin" Value="0,0,15,0" />
+    </Style>
+
+    <Style Selector="ComboBox.combo-box.no-outline">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
     </Style>
 
 </Styles>

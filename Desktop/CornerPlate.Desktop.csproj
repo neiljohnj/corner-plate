@@ -42,4 +42,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Infrastructure\CornerPlate.Infrastructure.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\MenuCatalog\" />
+  </ItemGroup>
 </Project>

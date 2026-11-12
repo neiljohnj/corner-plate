@@ -24,6 +24,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
@@ -89,7 +90,7 @@
             <ComboBox Grid.Column="1" 
                       Classes="form-control combo-box"
                       SelectedIndex="0" 
-                      HorizontalAlignment="Stretch">
+                      HorizontalAlignment="Stretch"> 
                 <ComboBoxItem Content="All Products" />
                 <ComboBoxItem Content="Burgers" />
                 <ComboBoxItem Content="Fries" />
@@ -104,6 +105,54 @@
                 <ComboBoxItem Content="Bundle" />
             </ComboBox>
         </Grid>
+
+        <Grid ColumnSpacing="12" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <ComboBox Classes="form-control combo-box"
+                      SelectedIndex="0"
+                      HorizontalAlignment="Stretch"
+                      >
+                <ComboBoxItem Content="Availability: All" />
+                <ComboBoxItem Content="Availability: Available"  />
+                <ComboBoxItem Content="Availability: Unavailable" />
+            </ComboBox>
+
+            <ComboBox Classes="form-control combo-box"
+                      Grid.Column="1"
+                      SelectedIndex="0"
+                      HorizontalAlignment="Stretch"
+                      >
+                <ComboBoxItem Content="Active status: All" />
+                <ComboBoxItem Content="Active status: Active" />
+                <ComboBoxItem Content="Active status: Inactive" />
+            </ComboBox>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" 
+                       Text="8 products"
+                       VerticalAlignment="Center"
+                       />
+
+            <ComboBox Grid.Column="1"
+                      Classes="form-control combo-box no-outline"
+                      SelectedIndex="0"
+                      >
+                <ComboBoxItem Content="Name A-Z" />
+                <ComboBoxItem Content="Name Z-A" />
+            </ComboBox>
+        </Grid>
+
     </Grid>
 
 </UserControl>
