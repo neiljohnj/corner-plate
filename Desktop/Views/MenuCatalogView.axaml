@@ -179,7 +179,18 @@
                                     Converter={StaticResource CurrencyConverter}}"
                                  />
 
-                <TableViewColumn Header="Availability" />
+                <TableViewColumn Header="Availability" 
+                                 Width="2*"
+                                 Binding="{Binding Availability,
+                                    Converter={StaticResource AvailabilityStatusConverter}}"
+                                 />
+
+                <TableViewColumn Header="Active"
+                                 Width="*"
+                                 Binding="{Binding Active,
+                                    Converter={StaticResource ActiveStatusConverter}}"
+                                 />
+
             </TableView.Columns>
         </TableView>
 

@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="CornerPlate.Desktop.App"
              xmlns:local="using:CornerPlate.Desktop"
-             xmlns:helpers="using:CornerPlate.Desktop.Helpers"
+             xmlns:converters="using:CornerPlate.Desktop.Helpers.Converters"
              RequestedThemeVariant="Default">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
@@ -40,12 +40,18 @@
 
         <!-- End of Color Resources -->
 
-        <!-- Helpers -->
+        <!-- Converters -->
 
-        <helpers:DecimalToCurrencyConverter 
+        <converters:DecimalToCurrencyConverter 
             x:Key="CurrencyConverter" />
 
-        <!-- End of Helpers -->
+        <converters:ActiveStatusConverter
+            x:Key="ActivateStatusConverter" />
+
+        <converters:AvailabilityStatusConverter
+            x:Key="AvailabilityStatusConverter" />
+
+        <!-- End of Converters -->
 
     </Application.Resources>
 
